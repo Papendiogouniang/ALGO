@@ -1,0 +1,48 @@
+/* *********** Analyse de la phrase ******* */
+
+/*
+Lire une phrase caractère par caractère jusqu'au point final ('.')
+Compter :
+1. Le nombre total de caractères
+2. Le nombre de mots (séparés par un espace unique)
+3. Le nombre de voyelles
+*/
+
+VAR
+   longueur : ENTIER := 0;  // Compteur de la longueur de la phrase
+   nb_mots : ENTIER := 0;   // Compteur du nombre de mots
+   nb_voyelles : ENTIER := 0; // Compteur du nombre de voyelles
+   voyelles : CHAINE := 'aeiouyAEIOUY';  // Liste des voyelles
+   espace_prec : BOOLEEN := VRAI;  // Pour savoir si un caractère est un espace
+   caractere : CARACTERE;  // Variable pour lire chaque caractère
+
+DEBUT
+   ECRIRE('Entrez une phrase terminée par un point : ');
+
+   REPETER
+      LIRE(caractere);
+
+      SI caractere <> '.' ALORS
+      DEBUT
+         longueur := longueur + 1;  // Incrémenter le compteur de caractères
+
+         // Vérifier si c'est une voyelle
+         SI POS(caractere, voyelles) > 0 ALORS
+            nb_voyelles := nb_voyelles + 1;
+
+         // Détecter un mot
+         SI caractere = ' ' ALORS
+            espace_prec := VRAI
+         SINON SI espace_prec = VRAI ALORS
+         DEBUT
+            nb_mots := nb_mots + 1;
+            espace_prec := FAUX;
+         FIN;
+      FIN;
+   JUSQU'A caractere = '.';
+
+   // Affichage des résultats
+   ECRIRE('Longueur de la phrase : ', longueur);
+   ECRIRE('Nombre de mots : ', nb_mots);
+   ECRIRE('Nombre de voyelles : ', nb_voyelles);
+FIN.
