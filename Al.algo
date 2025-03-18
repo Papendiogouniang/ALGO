@@ -9,11 +9,11 @@ Compter :
 */
 
 VAR
-   longueur : ENTIER := 0;  // Compteur de la longueur de la phrase
-   nb_mots : ENTIER := 0;   // Compteur du nombre de mots
-   nb_voyelles : ENTIER := 0; // Compteur du nombre de voyelles
-   voyelles : CHAINE := 'aeiouyAEIOUY';  // Liste des voyelles
-   espace_prec : BOOLEEN := VRAI;  // Pour savoir si un caractère est un espace
+   longueur : ENTIER ;  // Compteur de la longueur de la phrase
+   nb_mots : ENTIER  0;   // Compteur du nombre de mots
+   nb_voyelles : ENTIER  0; // Compteur du nombre de voyelles
+   voyelles : CHAINE ;  // Liste des voyelles
+   espace_prec : BOOLEEN ;  // Pour savoir si un caractère est un espace
    caractere : CARACTERE;  // Variable pour lire chaque caractère
 
 DEBUT
